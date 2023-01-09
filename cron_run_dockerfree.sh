@@ -29,9 +29,9 @@ minet twitter attrition --rcfile /home/bmazoyer/Dev/minet/.minetrc.json --ids --
 COLUMNS="tweet_current_status,id,user_id,collection_time,timestamp_utc,local_time,user_screen_name,text,possibly_sensitive,retweet_count,like_count,reply_count,lang,to_username,to_userid,to_tweetid,source_name,source_url,user_location,lat,lng,user_name,user_verified,user_description,user_url,user_image,user_tweets,user_followers,user_friends,user_likes,user_lists,user_created_at,user_timestamp_utc,collected_via,match_query,retweeted_id,retweeted_user,retweeted_user_id,retweeted_timestamp_utc,quoted_id,quoted_user,quoted_user_id,quoted_timestamp_utc,url,place_country_code,place_name,place_type,place_coordinates,links,domains,media_urls,media_files,media_types,mentioned_names,mentioned_ids,hashtags"
 xsv select $COLUMNS tmp_tmp_attrition.csv | xsv behead >> past_tweets_users.csv
 
-echo "$(date) : compress last file" >> $LOG_FILE
-# Compress last file
-gzip $LAST_FILE
+#echo "$(date) : compress last file" >> $LOG_FILE
+## Compress last file
+#gzip $LAST_FILE
 
 echo "$(date) : remove temporary files" >> $LOG_FILE
 # Remove temporary files
